@@ -19,16 +19,22 @@ h5 {
 	padding: 10px;
 }
 
-.results{
+.results {
+	display: none;
 	font-size: 20px;
 	border-style: solid;
-	border-radius: 5px;
-	border-color: #0077ff;
+	border-width: 0.5px;
+	border-color: #000;
 	background-color: white;
 	padding: 2px;
+	box-shadow: 4px 5px;
 }
 
-.results a{
+.results:hover {
+	box-shadow: 6px 8px;
+}
+
+.results a {
 	padding-left: 20px;
 }
 

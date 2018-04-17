@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$("#search").on("click", function() {
+		$("#results").text("");
 		var query = $("#query").val();
 		var url = "https://en.wikipedia.org/w/api.php?action=query&format=json&gsrlimit=15&generator=search&origin=*&gsrsearch=";
 		$.getJSON(url + query, function(json) {

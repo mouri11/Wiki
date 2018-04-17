@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wiki Viewer</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row" style="padding-top: 5%">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<h1>Wiki Page Viewer</h1>
+				<h6>Enjoy your favourite articles, or a random pick here.</h6>
+				<table align="center" class="table-borderless">
+					<tr>
+						<td><button class="btn" type="button" id="random">
+							<a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Article
+								<i class="fa fa-share-square"></i></a>
+						</button></td>
+						<td><input class="form-control mx-md-3" type="text" id="query" placeholder="Search an article"></td>
+						<td><button class="btn btn-primary" type="button" id="search"><i class="fa fa-search"></i></button></td>
+						<td><button class="btn btn-primary" type="button" id="clear"><i class="fa fa-trash"></i></button></td>
+					</tr>					
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8" id="results"></div>	
+		</div>
+	</div>
+</body>
+</html>

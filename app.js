@@ -6,12 +6,13 @@ $(document).ready(function() {
 			alert("Please enter a keyword");
 		}
 		else {
-			var url = "https://en.wikipedia.org/w/api.php?action=query&format=json&gsrlimit=15&generator=search&origin=*&gsrsearch=";
+			var url = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&exlimit=max&explaintext=&exintro=&gsrlimit=15&generator=search&origin=*&gsrsearch=";
 			$.getJSON(url + query, function(json) {
 				var page = json.query.pages;
 				$("#results").append("<h5 align='center'>Top 15 results for '"+ query +"'</h5>");
 				$.each(page, function(i) {
-					$("#results").append("<p class='results' id='"+ page[i].pageid +"'><a href='https://en.wikipedia.org/?curid="+ page[i].pageid +"' target='_blank'>"+page[i].title+"</a></p>");
+					$("#results").append("<p class='results' id='"+ page[i].pageid +"'><a href='https://en.wikipedia.org/?curid="+ page[i].pageid +"' target='_blank'>"+page[i].title+"</a></p>" + 
+						"<p align='justify'>"+ page[i].extract.slice(0,page[i].extract.indexOf(".") + 1) +"</p>");
 					$("#"+page[i].pageid).fadeIn(1000);
 				});
 			});
